@@ -1,0 +1,133 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+<link href="../pal.css" rel="stylesheet" type="text/css">
+<TITLE>HD Cookbook Errata</TITLE>
+</head>
+<body>
+<h2><center>HD Cookbook Errata, Ch. 15-23</center></h2>
+
+<h2>Chapter 16</h2>
+
+<p>
+<b>Page 16-1, paragraph 2</b>:&nbsp;
+The text indicates that the name &quot;Xlet&quot; was copied into the 
+mobile phone/CLDC space.  In fact, the xlet <i>model</i> was copied
+into this space, but it was renamed &quot;Midlet&quot;.
+</p>
+<p>
+<b>Page 16-2 paragraph 2</b>:&nbsp;
+The text indicates there are no classloaders in CLDC.  This is imprecise;
+in fact, there are system classloaders in CLDC, but no application classloaders
+as are found in CDC and desktop Java.
+</p>
+
+<p>
+<b>Page 16-11, sample code 16.4</b>:&nbsp;
+A local variable <code>c</code> is used to hold the 
+<code>PlaybackControl</code>, rather
+than assigning it to the instance variable 
+<code>playackControl</code> declared in sample code 16.3.  Similarly,
+an undeclared variable <code>p</code> is assumed to contain an instance
+of Player; the instance variable <code>ourPlayer</code> declared in 16.3
+should have been used instead.
+</p>
+
+<p>&nbsp;</p>
+<h2>Chapter 17</h2>
+<p>
+<b>Page 17-3, sample code 17.2</b>:&nbsp;
+The variables <code>ht</code> and <code>hst</code> should both
+be <code>t</code>, the variable
+<code>factory</code> should be <code>fact</code>, and the
+variable <code>mc</code> should be <code>myComponent</code>.
+</p>
+
+<p>
+<b>Page 17-11, sample code 17.8</b>:&nbsp;
+The title is incorrect, and should be &quot;Loading a sound using
+the <code>HSound</code> API&quot;
+</p>
+
+<p>
+<b>Page 17-12, sample code 17.9</b>:&nbsp;
+The call to <code>redraw()</code> should be to <code>repaint()</code>.
+
+<p>&nbsp;</p>
+<h2>Chapter 19</h2>
+<p>
+<b>Page 19-4, Sample Code 19.2</b>:&nbsp;
+In the import statement at the top,
+<code>org.havi.ui.HKeyCapabilities</code>
+should be
+<code>org.havi.ui.event.HRcCapabilities</code>.
+<p>
+<b>Page 19-5, Sample Code 19.2</b>:&nbsp;
+The return type of the method <code>getKeyHue(int)</code>
+should be <code>float</code>.
+
+<p>&nbsp;</p>
+<h2>Chapter 20</h2>
+<p>
+<b>Page 20-4, paragraph 4</b>:&nbsp;
+The two sentences at the end of the paragraph should be removed.
+They are, &quot;<strike>There is another control in <code>org.bluray.media</code>
+called <code>AsynchronousPiPControl</code>, but it has proven to be
+somewhat problematic in practice.  It is not discussed here.</strike>&quot; 
+</p>
+
+<p>&nbsp;</p>
+<h2>Chapter 21</h2>
+<p>
+<b>Page 21-2, paragraph 2</b>:&nbsp;
+The system property <code>org.bluray.vfs.root</code> should be
+<code>bluray.vfs.root</code>.
+</p>
+
+
+<p>&nbsp;</p>
+<h2>Chapter 23</h2>
+
+<b>Page 23-11, Sample Code 23.4</b>:&nbsp;
+The to segment definitions incorrectly have a open-brace ("{")
+after the segment name.
+</p>
+
+<p>&nbsp;</p>
+<h2>DVD Included in Book</h2>
+
+<p>
+<h3>Book Disc Image Doesn't Work</h3>
+<p>
+The BD disc image and code on the DVD has had a number of bugfixes
+and enhancements since the publication of the book.  Two are of
+particular note:
+</p>
+<ul>
+    <li>The jarsigner tool had a bug in JAR signing that will cause
+        the menu xlet to not run on newer versions of players, such
+	as software player versions that have come out since the book's
+	publication.  This bug has been fixed.
+    <li>The need to strip the "CPI bits" out of the transport stream to
+        enable playback on a consumer PS/3, and other valid players was
+	discovered.  Thus, a version of the transport streams with these
+	bits set false is now available.
+</ul>
+<p>
+To get the latest version, you'll need the "subversion" source code
+management system installed on your computer.  Go
+to 
+<a href="https://hdcookbook.dev.java.net">https://hdcookbook.dev.java.net</a>.
+First, grab
+the disc image 2007_10_hdcookbook_disc_image_no_jar_no_bdjo.zip
+from under the "documents and files" link.  This has the CPI bit
+set to false in the video stream.  Then,
+bring over the subversion repository (click on "subversion" on the
+right).  You'll need to set a couple of variables to point to the
+platform stubs, and to the place you want the JAR and BDJO files to be
+installed -- look at vars.properties, which tells you how to override
+them in user.vars.properties.
+</p>
+
+
+</body>
+
